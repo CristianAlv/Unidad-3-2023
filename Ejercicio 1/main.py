@@ -3,6 +3,7 @@ from claseFacultad import Facultad
 from ManejadorFacultades import ManejadorFacultad
 from Menu import Menu
 
+
 def test():
     pos=0
     Manejador = ManejadorFacultad()
