@@ -1,0 +1,30 @@
+El dueño de una distribuidora de bebidas les ha solicitado una aplicación para administrar las bebidas
+que vende.
+
+Para atraer clientes, la distribuidora tiene como política ofrecer descuentos en algunas bebidas.
+De toda bebida se registra el código, descripción (por ej. “Cerveza Amber Lager Patagonia”), tamaño
+expresado en centímetros cúbicos, si el envase es retornable y precio de lista.
+De una bebida con descuento además de los datos anteriores, se registra el porcentaje de descuento.
+El analista le solicita que desarrolle una aplicación con las siguientes restricciones.
+
+a) Definir la jerarquía de clases que represente las bebidas según lo descripto anteriormente.
+
+b) Defina las clases necesarias para implementar una lista enlazada definida por el programador
+para almacenar las bebidas.
+
+c) Implementar un programa principal con un menú de opciones que permita lo siguiente:
+1. Agregar una bebida a la lista.
+2. Dado un código de bebida con descuento modificar el porcentaje de descuento.
+3. De cada bebida mostrar la descripción y el precio de venta.
+
+Nota: Cuando una bebida es de envase retornable, si el cliente no trae el envase se le puede
+vender la bebida, pero el precio de venta sufre un pequeño incremento por el envase. Por ello
+para las bebidas de envase retornable se debe mostrar el precio de venta incluyendo envase y el
+precio de venta sin incluir envase (es el precio de lista).
+
+Para determinar el precio de venta de una bebida se debe considerar:
+a. Bebida con envase retornable incluyendo envase:
+Precio de venta = Precio de lista + (precio de lista *0.01).
+b. Bebida con descuento:
+Precio de venta = Precio de lista - (precio de lista * descuento /100).
+c. Para cualquier otra bebida el precio de venta es igual al precio de lista.
