@@ -21,7 +21,7 @@ class Bebida(ABC):
     def gettamaño(self):
         return self.__tamaño
     def getRetornable(self):
-        return self.__tamaño
+        return self.__Retornable
     def getPrecio(self):
         return self.__precio
     @abc.abstractmethod
