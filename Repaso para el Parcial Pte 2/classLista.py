@@ -98,30 +98,30 @@ class Lista:
                     
     def eliminar (self, codigo):
         aux = self.__comienzo
-        ant = aux
         cont = 0
         band = False
+        ant= None
         if aux.getDato().getcodigo() == codigo:
+            band = True
             self.__comienzo = aux.getsiguiente()
-            del aux
             self.__tope -= 1
+            del aux
             print ("Elemento eliminado")
-        else:
-            aux = aux.getsiguiente()
-            while aux != None and band == False:
-                if aux.getDato().getcodigo() == codigo:
-                    band= True
+            return
+        while aux is not None and not band:
+            if aux.getDato().getcodigo() == codigo:
+                band = True
+            else:
+                ant = aux
                 aux = aux.getsiguiente()
-            if band == True:
-                ant.setSiguiente(aux.getsiguiente())
-                del aux
-                self.__tope -=1
-                print ("Elemento Eliminado")
-        
-        
-        
-        
-        
+
+        if band:
+            ant.setSiguiente(aux.getsiguiente())
+            self.__tope -= 1
+            del aux
+            print("Elemento eliminado")
+        else:
+            print("No se encontró un elemento con el código especificado")
         
         
     def mostrar(self):
