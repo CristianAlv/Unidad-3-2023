@@ -95,6 +95,35 @@ class Lista:
                             aux.getDato().setdescuento(new)
                             print ("Porcentaje cambiado a {}" .format(aux.getDato().getporcentaje()))   
                     aux = aux.getsiguiente()
+                    
+    def eliminar (self, codigo):
+        aux = self.__comienzo
+        ant = aux
+        cont = 0
+        band = False
+        if aux.getDato().getcodigo() == codigo:
+            self.__comienzo = aux.getsiguiente()
+            del aux
+            self.__tope -= 1
+            print ("Elemento eliminado")
+        else:
+            aux = aux.getsiguiente()
+            while aux != None and band == False:
+                if aux.getDato().getcodigo() == codigo:
+                    band= True
+                aux = aux.getsiguiente()
+            if band == True:
+                ant.setSiguiente(aux.getsiguiente())
+                del aux
+                self.__tope -=1
+                print ("Elemento Eliminado")
+        
+        
+        
+        
+        
+        
+        
     def mostrar(self):
         aux = self.__comienzo
         for dato in self:

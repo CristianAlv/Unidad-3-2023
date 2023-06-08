@@ -15,5 +15,7 @@ if __name__=='__main__':
     ListaBebida.agregar(bebida3)
     codigo = str(input("Ingrese el codigo de bebida con descuento: "))
     ListaBebida.Indicar(codigo)
+    codigo = str(input("Ingrese un codigo de la bebida a eliminar: "))
+    ListaBebida.eliminar(codigo)
     ListaBebida.mostrar()
     
