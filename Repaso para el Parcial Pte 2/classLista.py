@@ -11,6 +11,7 @@ class Lista:
         self.__indice = 0
         
     def __iter__(self):
+        self.__indice = 0
         return self
     
     def __next__(self):
@@ -114,7 +115,6 @@ class Lista:
             else:
                 ant = aux
                 aux = aux.getsiguiente()
-
         if band:
             ant.setSiguiente(aux.getsiguiente())
             self.__tope -= 1
@@ -125,7 +125,6 @@ class Lista:
         
         
     def mostrar(self):
-        aux = self.__comienzo
         for dato in self:
             print("Descripcion: {}, Precio Venta: {}".format(dato.getdescripcion(), dato.precioVenta()))
             

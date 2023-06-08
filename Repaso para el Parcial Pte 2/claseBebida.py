@@ -1,7 +1,5 @@
-import abc
-from abc import ABC
 
-class Bebida(ABC):
+class Bebida():
     __codigo = str
     __descripcion = str
     __tamaño = float
@@ -24,10 +22,8 @@ class Bebida(ABC):
         return self.__Retornable
     def getPrecio(self):
         return self.__precio
-    @abc.abstractmethod
     def gettipo(self):
         pass
-    @abc.abstractmethod
     def precioVenta(self):
         pass
     

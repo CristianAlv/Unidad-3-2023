@@ -17,7 +17,7 @@ class Empleado:
         return self.__direccion
     def gettelefono(self):
         return self.__telefono
-    
+
     def getsueldo(self):
         pass
     def setsueldo(self, ayuda):
