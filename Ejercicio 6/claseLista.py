@@ -25,9 +25,10 @@ class ListaVehiculos:
         self.indice = 0  # inicializar el índice del iterador
         return self
     
-    def agregarelemento(self, unVehiculo): #Agregar elemento es la misma metodologia que el insertar unicamente que agregamos un objeto independientemente de su posicion
-        aux= self.__comienzo
-        ant= aux
+    def agregarelemento(self, unVehiculo):
+        aux = self.__comienzo
+        ant = aux
+        
         if aux == None:
             nodo = Nodo(unVehiculo)
             nodo.setSiguiente(self.__comienzo)
@@ -35,16 +36,14 @@ class ListaVehiculos:
             self.__actual = nodo
             self.__tope += 1
         else:
-            i=0
-            while (aux != None) and i<self.__tope:
+            while aux.getSiguiente() != None:
                 ant = aux
                 aux = aux.getSiguiente()
-                i+=1
-            if ant != None:
-                nodo = Nodo(unVehiculo)
-                nodo.setSiguiente(aux) 
-                ant.setSiguiente(nodo)
-                self.__tope+=1
+                
+            nodo = Nodo(unVehiculo)
+            aux.setSiguiente(nodo)
+            self.__tope += 1
+            print("Vehículo agregado al final")
                 
     def insertar(self, posicion, elemento): #el insertar permite a partir de dos parametros fundamentales insertar un elemento en el comienzo o dentro de la lista
             aux = self.__comienzo
@@ -176,6 +175,13 @@ class ListaVehiculos:
                 print("{:-^150}".format(""))
             aux = aux.getSiguiente()
         print("{:=^150}".format(""))
+    def getLista(self):
+        lista = []
+        aux = self.__comienzo
+        while aux != None:
+            lista.append(aux.getDato().getmodelo())
+            aux = aux.getSiguiente()
+        return lista
     def toJSON (self):
         d = dict (
             __class__ = self.__class__.__name__,

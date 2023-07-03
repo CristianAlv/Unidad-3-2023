@@ -27,9 +27,16 @@ class Personal(ABC):
         print("----Datos del Personal Universitario----\n")
         print("Nombre y Apellido:{} {}\nCUIL: {}\nSueldo Basico: {:.2f} - Antiguedad: {} años".format(self.getnombre(), self.getapellido(), self.getcuil(), self.getsueldo(), self.getantiguedad()))
     
+
+    
     @abc.abstractmethod
     def ImporteSueldo(self):
         pass
+    
+    def __gt__(self, other):
+        var1 = {self.getnombre()}, {self.getapellido()}
+        var2 = {other.getnombre()}, {other.getapellido()}
+        return (var1 > var2)
     def toJSON (self):
         d = dict(
             __class__ = self.__class__.__name__,

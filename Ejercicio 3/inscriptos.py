@@ -3,8 +3,8 @@ from persona import persona
 class Inscripto(object):
     __fecha = None
     __pago = False
-    __persona = None
-    __taller = None
+    __persona: object
+    __taller: object
     def __init__(self, fecha, persona, taller):
         self.__fecha = fecha
         self.__pago = False

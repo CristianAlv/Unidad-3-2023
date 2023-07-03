@@ -6,12 +6,13 @@ class TallerCapacitacion(object):
     __nombre = str
     __vacantes = int
     __monto = int
-    __inscripto = []
+    __inscripto: list
     def __init__(self, iD, nombre, vacantes, monto):
         self.__idTaller = iD
         self.__nombre = nombre
         self.__vacantes = vacantes
         self.__monto = monto
+        self.__inscripto = []
 
     def getIdTaller (self):
         return self.__idTaller

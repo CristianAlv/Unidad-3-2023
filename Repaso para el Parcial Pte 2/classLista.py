@@ -36,7 +36,6 @@ class Lista:
         else:
             cont = 0
             ant = aux
-            band = False
             while aux != None and cont <= self.__tope:
                 ant = aux
                 aux = aux.getsiguiente()

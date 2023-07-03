@@ -139,27 +139,17 @@ class ListaPersonalUniv:
     
                 
     def ordenar(self, carrera):
+        elementos = []
         nodo = self.__comienzo
-        p = None
-        while nodo != None:
-            p = nodo.getSiguiente()
-            while (p != None):
-
-                if (nodo.getDato().getnombre() > p.getDato().getnombre()):
-                    aux = nodo.getDato
-                    nodo.getDato = p.getDato
-                    p.getDato = aux
-
-                p = p.getSiguiente()
-            
+        while nodo is not None:
+            elementos.append(nodo.getDato())
             nodo = nodo.getSiguiente()
-        unico = False
-        for dato in self:
-            if isinstance(dato, Docente):
-                if carrera == dato.getcarrera():
-                    evaluar = self.evaluar(dato)
-                    if evaluar == True:
-                        dato.mostrarDatos()
+        elementos.sort(key=lambda x:(x.getnombre(),x.getapellido())) 
+        for dato in elementos:
+            if isinstance(dato, Docente) and carrera == dato.getcarrera():
+                evaluar = self.evaluar(dato)
+                if evaluar:
+                    dato.mostrarDatos()
                         
     def mostrararea(self):
         aux = self.__comienzo
@@ -187,7 +177,7 @@ class ListaPersonalUniv:
         print ("La cantidad de docentes investigadores de esa area son: {}".format(cont))
         print ("La cantidad de investigadores que se desempeñan en el area {} son: {}".format(area,contA))
         
-    def OrdenarLista(self):
+    #def OrdenarLista(self):
         nodo = self.__comienzo
         p = None
         while nodo != None:
