@@ -28,7 +28,7 @@ if __name__ == '__main__':
         print("2. Opción 2: Agregar a Agentes a la coleccion: ")
         print("3. Opción 3:  Dada una posición de la lista: Mostrar por pantalla que tipo de agente se encuentra almacenado en dicha posición")
         print("4. Opción 4: El nombre de una carrera y generar un listado ordenado por nombre con todos los datos de los agentes que se desempeñan como docentes investigadores.")
-        print("5. Opción 5: Dada un area de investigacion contar")
+        print("5. Opción 5: Dada un area de investigacion contar ")
         print("6. Opción 6: Recorrer la colección y generar un listado que muestre nombre y apellido, tipo de Agente y sueldo de todos los agentes, ordenado por apellido.")
         print("7. Opción 7: Con una categoria ingresada por teclado listar apellido, nombre e importe extra, y mostrar Total")
         print("8. Opción 8: Almacenar los datos de todos los agentes en el archivo “personal.json”")
